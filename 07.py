@@ -41,9 +41,11 @@ def main():
         12: 2.78,
     }
 
-    print(f"Сума\tP (M-C)\tP (реальна)")
+    print(f"Сума\tP (M-C)\tP (реальна)\tПохибка")
     for sum, probability in probabilities:
-        print(f"{sum}\t{probability * 100:.2f}\t{p_real[sum]:.2f}")
+        print(
+            f"{sum}\t{probability * 100:.2f}\t{p_real[sum]:.2f}\t\t{(((probability * 100) - p_real[sum]) / p_real[sum]) * 100:.2f}"
+        )
 
 
 if __name__ == "__main__":
